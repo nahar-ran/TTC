@@ -9,7 +9,9 @@ app.filter('percentage', ['$filter', function ($filter) {
 
 app.controller('mainController',['$scope','$window','$http','$timeout','$interval','$location',function($scope,$window,$http,$timeout,$interval,$location){
 
-    $scope.curCurrency = 0;
+    $scope.curCurrency = 0; 
+	
+$scope.ha = 'll';
 
     $scope.showInvestor = false;
 
