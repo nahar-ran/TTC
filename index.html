@@ -1,0 +1,611 @@
+<html ng-app = 'app'>
+
+        <head>
+
+                <link rel = "stylesheet" type = 'text/css' href = 'styles/index.css'/>
+                <!-- <link rel = "stylesheet" media="screen and (min-width: 1200px) and (max-width:1400px)" type = 'text/css' href = 'styles/index-1400-height.css' /> -->
+              	<!-- <link rel = "stylesheet" media="screen and (min-width: 1600px)" type = 'text/css' href = 'styles/index-1800-width.css' /> -->
+                  <meta charset="UTF-8">
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+                <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+                <script src = 'ng-pattern-restrict.js'></script>
+                <script src="app.js"></script>
+                <script src="controllers/mainController.js"></script>
+
+            
+
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+
+         
+                
+                <title>
+                TopTenCoin
+                </title>
+                
+                
+                <style>
+
+                    .ng-invalid{
+
+                                background-color:red;
+                    }
+
+                </style>
+                <script>
+
+                </script>
+        </head>
+
+
+        <body ng-controller = 'mainController'>
+            <div id = 'section1Wrap'>
+            <div id = 'section1-inner'>
+                         <header>
+
+                                    <img id = 'logo' src = 'elements/logo.png'/>
+                                    <img id = 'switchEnglishMode' src = 'elements/usFlag.png'/>
+
+                                    <a href = 'https://trade.toptencoin.com/' id = 'signIn'>
+                                            Sign in
+                                    </a>
+
+
+                                    <a href = 'https://www.toptencoin.com/' id = 'register'>
+                                        Register
+                                    </a>
+                                    
+                               
+
+                         </header>
+
+                         <div id = 'sectionContent'>
+                                <h2>
+                                        THE MOST TRUSTED DIGITAL ASSETS EXCHANGE
+                                    </h2>
+                                <div id = 'tableWrapperOuter'>
+                                    <div id = 'tableWrapper-inner'>
+                                        <table id = 'exchangeDataTable'>
+                                   
+                                        <tr id = 'titlesRow'>
+                                                <th>Currency</th>
+                                                <th>Price</th>
+                                                <th>Last 1hr</th>
+                                                <th>Last 24hr</th>
+                                                <th>Last 7days</th>
+                                                <th>Market Cap</th>
+                                        </tr>  
+
+                                        <tr ng-repeat = 'coinData in cryptoCurencyGeneralData'>
+                                                <td> {{coinData.name}} </td>
+                                                <td> {{coinData.price_usd}} </td>
+                                                <td ng-class = "coinData.percent_change_1h > 0 ? 'green':'red' "> {{coinData.percent_change_1h}}% </td>
+                                                <td ng-class = "coinData.percent_change_24h > 0 ? 'green':'red' "> {{coinData.percent_change_24h}}%  </td>
+                                                <td ng-class = "coinData.percent_change_7d > 0 ? 'green':'red' "> {{coinData.percent_change_7d}}% </td>
+                                                <td> {{coinData.market_cap_usd}} </td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+                             
+                            </div>
+
+                            <div id = 'formWrapper'>
+                                <form id = 'userForm' name = 'tradingForm' ng-submit = 'submitForm(formData)'>
+
+                                    <h1 id = 'form-title'>
+                                        Fill in your details
+                                    </h1>
+                                   
+                                        <div class = 'inputContainer' id = 'firstName'>
+                                            
+                                            <input required id ='firstName' placeholder="First Name"  class = 'formInputs' ng-pattern-restrict = "^[A-Za-z]*$"  ng-minlength="2" name = 'firstName' type = 'text' ng-model = 'formData.firstName'/> 
+                                            <span class ='invalids' ng-show = 'tradingForm.firstName.$dirty&&tradingForm.firstName.$invalid'> Valid names contain at least 2 letters</span> 
+                                            <span class ='valids' ng-show = 'tradingForm.firstName.$dirty&&tradingForm.firstName.$valid'>    </span>  
+                                        </div>
+                                    
+
+                                        <div class = 'inputContainer' id = 'lastName'> 
+                                            <input ng-minlength="2" required id= 'lastName' ng-pattern-restrict = "^[A-Za-z]*$" placeholder="Last Name"  class = 'formInputs' name = 'lastName' type = 'text' ng-model = 'formData.lastName'/> 
+                                            <span class ='invalids' ng-show = 'tradingForm.lastName.$dirty&&tradingForm.lastName.$invalid'>Valid  last names contain at least 2 letters</span> 
+                                            <span class ='valids' ng-show = 'tradingForm.lastName.$dirty&&tradingForm.lastName.$valid'>   </span> 
+                                        </div>
+                
+
+                                        <div class = 'inputContainer' id = 'email'>  
+                                            <input required id = 'email' placeholder="Email"  class = 'formInputs' name = 'email' type = 'text' ng-pattern = "/([a-zA-Z])\d*@{1}([a-zA-Z]){2,}\.([a-zA-Z]){2,4}$/" ng-model = 'formData.email'/>  
+                                            <span class ='invalids' ng-show = 'tradingForm.email.$dirty&&tradingForm.email.$invalid'> Please insert a valid email address</span>
+                                             <span class ='valids' ng-show = 'tradingForm.email.$dirty&&tradingForm.email.$valid'>   </span> 
+                                        </div>
+                
+                                        <div class = 'inputContainer' id = 'phoneNumber'> 
+                                            <input required ng-minlength="12" id = 'phoneNumber' placeholder="Phone Number" ng-pattern-restrict = "^\+{1}([0-9]){2,}\-{1}[0-9]*$"  class = 'formInputs' type = 'text' area-code ng-init = "formData.phoneNumber = areaCode" name = 'phoneNumber' ng-model = 'formData.phoneNumber'/> 
+                                            <span class ='invalids' ng-show = 'tradingForm.phoneNumber.$dirty&&tradingForm.phoneNumber.$error.minlength'>Please insert a valid phone number</span> 
+                                            <span class ='valids' ng-show = 'tradingForm.phoneNumber.$dirty&&tradingForm.phoneNumber.$valid'>   </span> 
+
+                                        </div>
+                
+                                        <div class = 'inputContainer' id = 'password'>
+                                            <input name = 'password' required id = 'password' ng-minlength = "6" placeholder="Password" type = 'password'  class = 'formInputs' ng-model = 'formData.password' /> 
+                                            <span class ='invalids' ng-show = 'tradingForm.password.$dirty&&tradingForm.password.$invalid'>Must be at least 6 characters</span> 
+                                            <span class ='valids' ng-show = 'tradingForm.password.$dirty&&tradingForm.password.$valid'>   </span> 
+                                        </div> 
+    
+                                        <div class = 'submitContainer' id = 'password'><input required id = 'submitButton'  value="Start Trade!" type = 'submit'  class = 'btn btn-success' ng-disabled="tradingForm.$invalid" name = 'submit'/> </div>
+    
+                        </form>
+                </div>
+            
+                </div>
+
+            </div>      
+            </div>
+
+
+
+
+            <div id = 'section2'>
+
+
+                        <ul id = 'gifs'>
+                            
+                            <li ng-repeat = 'data in gifLiData' class = 'gifsLi'>
+
+                                        <img class = 'gifImages' ng-src =   {{data.src}} />
+
+                                            <span class = 'gifTitle'>
+                                                {{data.title}}
+                                            </span>
+
+                                            <span class = 'gifText'>
+                                                {{data.text}}
+                                            </span>
+                                 
+                                </li>
+
+
+
+
+
+
+
+                        </ul>
+
+            </div>
+
+            <div id = 'section3Wrap'>
+
+                <div id = 'nonModal'>
+
+                <div ng-show = '!showModal' id = 'section3Content'>
+
+                        <h2 id = 'title'>
+
+                                TOP 10 CRYPTOCURENCIES BY MARKET CATILIZATION
+    
+                            </h2>
+
+                     <ul id = 'coinsList1'>
+                         
+                        <li ng-click = 'showCoinModal($index,1)' class = 'coinLi1' ng-repeat = 'coin in coinsSeries1'>
+
+                                          <img src = {{coin.src}} class = 'coinImages'/>
+
+                                    <span class = 'coinTitles'>
+                                            {{coin.id}}
+                                    </span>
+                         </li>
+                      </ul>
+                      
+                      
+
+                    <ul id = 'coinsList2'>
+                         <li ng-click = 'showCoinModal($index,2)' class = 'coinLi2' ng-repeat = 'coin in coinsSeries2'>
+
+                                <img src = {{coin.src}} class = 'coinImages'/>
+
+                                <span class = 'coinTitles'>
+                                        {{coin.id}}
+                                </span>
+                        </li>
+
+                    </ul> 
+                         
+                
+                </div>
+
+            </div>
+
+                <div ng-show = 'showModal' coin-modal modalFunk = 'hideModal()' modal-data = 'modalData' id ='coinModalContainer'>
+
+                </div>
+
+                
+                    
+            </div>
+
+            <div id = 'section4'>
+
+                    <h1 id = 'title'>
+
+                        EXCHANGE RATES TO CRYPTOCURENCIES
+                    </h1>
+
+                    <div id= "converterContainer">
+                <ul id ='currencyExchangeList'>
+
+                    <crypto-directive ng-click = 'testfunk()' id = 'crypto' current-crypto-coins = 'curentCoins'>   
+
+                    </crypto-directive>  
+
+                  
+                
+                     <cash-directive target='cryptoCurencyInput' val-change = 'cryptoCurencyLatestInput' curCoinTarget = 'curSelectedCoin' currency = 'curCurrency' id = 'cash' cash-coins = 'cashCoins'>
+
+                      </cash-directive>  
+
+
+                
+
+                    </li>
+
+            </ul>
+
+        </div>
+
+
+
+<disclaimer-modal show-modal = 'showDisclaimerModal' data = 'curDisclaimerModalData'>
+                                
+</disclaimer-modal>
+    
+</div>
+
+
+            <div id = 'section5'>
+                
+                <h1 id = 'mainTitle'>
+                        THE VISIONARYS
+                </h1>
+
+                <h2 id = 'subTitle'>
+                        TOP 5 CRYPTOCURRENCY INVESTORS IN THE WORLD              
+
+                </h2>
+
+                <div id = 'investorContainer'>
+
+                        <div id = 'investorInner' ng-class = 'addItem' investor-directive investor-data = 'investorData'>                         
+
+                                    
+                        </div>            
+                </div>
+                <div id = 'choiseButtonsWrap'>
+            <ul id = 'choiseButtons'>
+
+                <li title = 'keep mouse on button' ng-repeat = 'data in investorDataArray' ng-click="insertInvestor(data)">
+    
+                        
+                       <a href = '' id = 'imageLinkWrap'> <img ng-mousemove="disableSelectionByUser($index)" ng-src = {{data.imageSelection}} class = 'investorChoinse'/> </a>
+                
+                </li>
+
+            </ul>    
+
+        </div>
+
+
+
+        <div id = 'FAQ'>
+            <h1>
+                    Frequently Asked Questions            
+                  
+            </h1>
+
+            <div id = 'answer1Wrap' class = 'questions'>
+                    <a  class= 'wb-toggle collapseLinks' href = "#answer1" data-toggle="collapse"><h2>How to deposit?</h2></a>
+                    <div id = "answer1" data-parent="#FAQ"  class="collapse collapseOuter tgl-panel">
+                            <div class = 'collapseInner'>
+                            <p>
+                                Once you are verified, you can easily deposit funds to your account using credit/Debit Cards, Bank Wires or BTC.
+                            </p>
+
+                        <p>Login to your account and Click on the Deposit Button. The minimum deposits are as follows:
+                        </p>
+                        <p>  Using a Credit/Debit - $500
+                            Using a Bank wire - $1000
+                            Using Bitcoin - 0.01 
+                        </p>                         
+                    </div>
+                    </div>
+                    </div>
+               <div id = 'answer2Wrap' class = 'questions'>
+
+                <a href = "#answer2" class = 'collapseLinks'  data-toggle="collapse"><h2>How to start trading?</h2></a>
+                    <div id = "answer2" data-parent="#FAQ"   class="collapse collapseOuter">
+                    <div class = 'collapseInner'>
+                        <p>
+                                It's simple, quick and free, just complete the form and activate your Trading account. After verifying your account, you can fund your account with Crypto or Fiat currency, whichever suits you.,
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id = 'answer3Wrap' class = 'questions'>
+                    <a href = "#answer3" class = 'collapseLinks'  data-toggle="collapse">  <h2> How to withdraw?</h2> </a>      
+                <div id = "answer3" data-parent="#FAQ"   class="collapse collapseOuter">
+                    <div class = 'collapseInner'>
+                    
+                    <p>
+                            If you’re looking for withdrawal funds from your account simply click on the withdrawal button.
+                    </p>
+                </div> 
+                </div>  
+            </div>
+
+            <div id = 'answer4Wrap' class = 'questions'>
+                    
+                    <a href = "#answer4" class = 'collapseLinks'  data-toggle="collapse"> <h2>What information is needed for KYC and AML?</h2></a>
+
+                    <div id = "answer4" data-parent="#FAQ"   class="collapse collapseOuter">
+                            <div class = 'collapseInner' >
+
+                        <ul id = 'outerList'>
+                            <li>
+                                    Copy of your ID or Passport
+                            </li>
+
+                            <li>
+                                    Proof of residency (Current utility bill from the last 3 months)
+                            </li>
+
+                            <li>
+                                    If you are using a Debit or Credit card, you will need to send a copy of the front & back sides including:
+                            </li>
+
+                            <li class = 'innerListPointer'>
+                                        Front of card:
+                            </li>
+
+                            <ul class = 'innerList' >
+                                    
+                                <li>
+                                        4 last digits of the card
+                                </li>
+
+                                <li>
+                                        Name of the card holder
+                                </li>
+
+                                <li>
+                                        Expiration date
+                                </li>
+
+                            </ul>
+
+                            <li class = 'innerListPointer'>
+                                    Back of card:
+                                    <ul class = 'innerList'>
+                                        <li> 
+                                                Signature on the back side
+                                        </li>
+                                </ul>
+                            </li>
+
+                            <p>
+                                    Feel free to blacken out all other information.
+                            </p>
+
+                        </ul>
+                    </div>
+                    </div>
+            </div>
+
+            
+
+            <div id = 'answer5Wrap' class = 'questions'>
+                    <a href = "#answer5"  class = 'collapseLinks' data-toggle="collapse"> <h2> Why do we need KYC and AML verification?</h2></a>
+                    
+                    <div id = "answer5"  data-parent="#FAQ"  class="collapse collapseOuter">
+                            <div class = 'collapseInner' >
+
+                    <p >
+                                As boasted on the headline of our site, we take safety and security for our members and ourselves very seriously. We cannot and will not enter into a business relationship with any sort of illegal entity/individual, nor will we transfer assets derived from illegal activity of any kind. We will not facilitate any criminal, terrorist or illegal activity. We reserve the right to implement any and all policies necessary to prevent such activity and will comply with all applicable legislation.
+                    </p>
+
+                </div>
+                </div>
+            </div>
+
+            <div id = 'answer6Wrap' class = 'questions'>
+                    <a href = "#answer6"  class = 'collapseLinks' data-toggle="collapse"> <h2>Can I trade digital currencies other then Bitcoin?</h2></a>
+                    
+                    <div id = "answer6" data-parent="#FAQ"  class="collapse collapseOuter">
+                        <div class = 'collapseInner' >
+                                <p>
+                                    Of course, Top Ten Coin Offers over 20,000 Crypto Pairs to trade with, just decide which ones are right for you.
+                                </p>    
+
+                        </div>
+                    </div>
+                    
+                  
+            </div>
+
+
+        </div>
+
+
+
+
+            <div id ='footerSection1'>
+                
+                    <div id = 'SideNav'>
+                        <ul>
+                                <li>
+                                   <a ng-click = 'showPrivacy()'>
+                                        privacy
+                                    </a>
+                                </li>
+                                <li>
+                                <a ng-click = 'showTerms()' >
+                                    terms and coinditions
+                                </a>
+
+                            </li>
+                                <li>
+                                        <a ng-click = 'showTermsPayment()'>
+                                            terms of payment
+                                        </a>
+                                </li>
+                         </ul>   
+
+
+
+                <ul id = 'credtImagesList'>
+                        
+                    <li><img class = 'credits' src = 'elements/mastercard.png'/></li>
+                    
+                    <li><img class = 'credits' src = 'elements/visacard.png'/></li>
+            
+                </ul>
+            
+                        
+            
+                    </div>
+
+
+                    <div id = 'bitcoinText'>
+                               
+                            <p id = 'bitcoinParagraph1'>
+                                    
+                                    Bitcoin is a new method to deal with money. one of the most important inventions in the history of evolution from barter trading to the present. send and recive money from anywhere to anyone. 
+
+                            </p>
+
+                                <p id = 'bitcoinParagraph2'>
+                                        The dawn of the new world that is better, more free and without restrictions. 
+                                </p>
+
+
+                            <p>
+
+                            </p>
+                    
+                        </div>
+    
+                </div>
+    
+
+
+                     
+            <div id = 'smallLetters'>
+
+                    <h3> 
+                            Disclaimer
+                    </h3>
+           
+                    <p id = 'smallLetters'>
+
+
+                        Top Ten Coin is a crypto currency trading platform. Trading with crypto currencies has the risk of partial or full loss of funds. To anyone looking to make profits with Top Ten Coin, the fact stated above should be taken into consideration. Before conducting trades on our platform, Top Ten Coin urges our clients to read our terms and conditions carefully. The quotes displayed for crypto currencies on the Top Ten Coin platform serves as an indication of the rates that the company is prepared to sell or buy crypto currencies at and may not reflect market quotations created by other platforms or quoted sales at the point of sale. Top Ten Coin is a brand owned and operated by RSK Ltd located in Sofia, Bulgaria. Billing and Clearing services are provided by RSK Ltd. Credit card clearing and billing is processed by RSK Ltd. Due to regional restrictions we do not currently offer services to the USA or to FATCA compliant individuals.
+                            
+
+                    </p>
+
+
+            </div>
+
+
+
+            <div id = 'imagesWrapp'>
+
+                <ul id = 'contact'>
+                        <li class = 'contact'> +359 249 16073 </li>
+
+                        <li class = 'contact'> Support@toptencoin.com</li>
+                </ul>
+            
+           </div>
+
+
+
+
+
+
+            <div id ='footerWrap'>
+                     
+           
+                 
+
+                <span id ='copyRights'>
+
+                        &copy;	2018 Toptencoin. All rights reserved
+
+                </span>
+
+    
+        
+            </div>
+        
+                
+
+        
+
+
+
+   
+
+
+
+
+        </div>
+
+
+
+
+      
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+              <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.5.js"></script>
+
+              <script>
+
+
+
+                            $(".collapseLinks").on('click', function (e) { 
+                                
+                                
+                                e.preventDefault(); console.log('event prevented') 
+                              $('.collapse').each(function(i,obj){
+                                            if ($(this).prev().attr('href') !=  $(e.currentTarget).attr('href'))
+                                                    $(this).removeClass('show');
+
+                                                console.log($(this).prev().attr('href'));
+                                                console.log($(e.currentTarget).attr('href'));
+                                                console.log($(this));
+
+
+                                           
+
+                              })
+
+                                    
+                                
+                                })
+
+
+
+              </script>
+
+
+        </body>
+
+</html>
