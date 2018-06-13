@@ -1,0 +1,114 @@
+[
+                        {
+                            "id":"BTC",
+                            "title": "Bitcoin (BTC)",
+                            "src":"coins/color/BTC.png",
+                            "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png",
+                            "text":"Invented by an unknown person or a group called “Satoshi Nakamoto” in 2008, Bitcoin is a digital coin that has value. The Bitcoin community allows transactions of digital assets and payments for goods without a third party. The transactions are recorded and verified by a public distributed ledger called a Blockchain. Bitcoin is a decentralized virtual currency, as there is no central repository which means it is not owned by a central entity such as a government or a central bank. It is the largest digital currency in terms of market value. Besides being obtained by mining, Bitcoins can be exchanged for other currencies, products, and services. Users can send and receive Bitcoins for a Low transaction fee."
+                        },
+        
+                        {"id":"ETH",
+                        "title":"Ethereum (ETH)",
+                        "src":"coins/color/ETH.png",
+                        "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+                        "text":"Created by Vitalik Buterin, a new approach was developed – With using the Ethereum system, apps are based on a network formed around the principle of consensus, making censorship impossible. It is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, with no central point of failure and secured using cryptography, applications are well protected against hacking attacks and fraudulent activities and third party interference. Ethereum was crowd funded during August 2014 by fans all around the world. It is developed by ETHDEV with contributions from great minds across the globe."
+                    },
+        
+                        {"id":"XRP",
+                        "title":"Ripple (XRP)",
+                       "src":"coins/color/XRP.png",
+                        "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/64x64/52.png",
+                        "text":"Ripple is a centralized real-time gross settlement system (RTGS), currency exchange and remittance network created by the Ripple company. Also called the Ripple Transaction Protocol, it’s built on a distributed open source internet protocol, consensus ledger and native Crypto currency abbreviated as XRP (ripples). Released in 2012, Ripple strives to enable “secure, instantly and nearly free global financial transactions of any size with no chargebacks.“ It supports tokens representing fiat currency, Crypto currency, commodity or any other unit of value such as frequent flier miles or mobile minutes. At its core, Ripple is based around a shared and public database or ledger that uses a consensus process that allows for payments, exchanges and remittance in a distributed process."
+                    },
+        
+                        {"id":"BCH",
+                        "title":"Bitcoin Cash (BCH) ",
+                       "src":"coins/color/BCC.png",
+                        "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png",
+                        "text":"Bitcoin Cash is a fork of the Bitcoin Blockchain ledger, with upgraded consensus rules that allow it to grow and scale. It brings sound money to the world, fulfilling the original promise of Bitcoin as “Peer-to-Peer Electronic Cash“. Merchants and users are empowered with low fees and reliable confirmations. There is unrestricted growth, global adoption, innovation, and decentralized development. The legacy Bitcoin code had a maximum limit of 1MB of data per block, or about 3 transactions per second. Although technically simple to raise this limit, the community could not reach a consensus, even after years of debate."
+                    },
+        
+        
+                    {   "id":"LTC",
+                        "title":"Litecoin (LTC)",
+                        "src":"coins/color/LTC.png",
+                        "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/64x64/2.png",
+                        "text":"Litecoin is a peer-to-peer Internet currency that enables instant, near-zero cost payments to anyone in the world. It is an open source, global payment network that is fully decentralized without any central authorities. Mathematics secures the network and empowers individuals to control their own finances. It also features faster transaction confirmation times and improved storage efficiency than the leading math-based currency. With substantial industry support, trade volume and liquidity, a proven medium of commerce complementary to Bitcoin."
+                    },
+
+
+                    {
+                        "id":"EOS",
+                        "title":"EOS (EOS)",
+                        "src":"coins/color/EOS.png",
+                        "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/64x64/1765.png",
+                        "text":"EOS is a Crypto currency token and Blockchain that operates as a smart contract platform for the deployment of decentralized applications and decentralized autonomous corporations. It aims to become a decentralized operating system supporting industrial-scale applications, eliminate transaction fees and also conduct millions of transactions per second. EOS will be the first Blockchain with its own constitution and will use the fairest distribution model yet. Speed will not be a factor in obtaining it. The price will be determined by the markets, so it will not be fixed."},
+
+
+                {   "id":"ADA",
+                    "title":"Cardano (ADA)",
+                    "src":"coins/color/ADA.png",
+                    "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png",
+                    "text":"Cardano is a project that began in 2015 as an effort to change the way Crypto currencies are designed and developed. The overall focus beyond a particular set of innovations is to provide a more balanced and sustainable ecosystem that better accounts for the needs of its users as well as other systems seeking integration. It is a decentralized public Blockchain and Crypto currency project and is fully open source. In addition, it is developing a smart contract platform which seeks to deliver more advanced features than any protocol previously developed. It is the first Blockchain platform to evolve out of a scientific philosophy and a research-first driven approach."},
+
+
+                {
+                    "id":"XLM",
+                    "title":"Stellar(XLM)",
+                    "src":"coins/color/XLM.png",
+                    "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/64x64/512.png",
+                    "text":"Stellar is a completely decentralized consensus platform, designed to support any type of currency and can be used to trade any type of currency or asset. A decentralized network consists of peers that can run independently of each other, so the Stellar network does not depend on any single entity. The idea is to have as many independent servers participate in the Stellar network as possible, so that the network will still run successfully even if some servers fail. Anchors are simply entities that people trust to hold their deposits and issue credits into the Stellar network for those deposits. The mission is to connect people to low-cost financial services to fight poverty."},
+
+
+                    {
+                        "id":"NEO",
+                        "title":"Neo (NEO)",
+                        "src":"coins/color/NEO.png",
+                        "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/64x64/1376.png",
+                        "text":"Neo was founded in 2014 and was real-time open source on GitHub in June 2015. Since its’ inception, the NEO team has experienced the rise of the Blockchain industry and the digital money market. Technology drives progress and together we can create the future. Motivated by this, NEO has been created to shift our traditional economy into the new era of the “Smart Economy“. NEO is a non-profit community-based Blockchain project that utilizes Blockchain technology and digital identity to digitize assets, to automate the management of digital assets using smart contracts, and to realize a “smart economy“ with a distributed network."},
+
+
+                {       
+                        "id":"XMR",
+                        "title":"Monero (XMR)",
+                        "src":"coins/color/XMR.png",
+                        "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/64x64/328.png",
+                        "text":"Monero is cash for a connected world. It’s fast, private, and secure. With Monero, you are your own bank, so you can spend safely, knowing that others cannot see your balances or track your activity. It uses ring signatures, ring confidential transactions, and stealth addresses to obfuscate the origins, amounts, and destinations of all transactions. It provides all the benefits of a decentralized cryptocurrency, without any of the typical privacy concessions. Monero is fungible (a simple property of money such that there are no differences between two amounts of the same value) because it is private by default."},                                                     
+                
+                {
+                    "id":"XEM",
+                    "title":"Nem (XEM)",
+                    "src":"",
+                    "modalSrc":"coins/color/XEM.png",
+                    "text":""
+                },
+                {
+                    "id":"MIOTA",
+                    "title":"IOTA (IOTA)",
+                    "src":"coins/color/MIOTA.png",
+                    "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/16x16/1720.png",
+                    "text":"IOTA enables companies to explore new business to business models by making every technological resource a potential service to be traded on an open market in real time, with no fees. The main innovation behind IOTA is the Tangle, a revolutionary new blockless distributed ledger which is scalable, lightweight and for the first time ever makes it possible to transfer value without any fees. The Tangle ledger is able to settle transactions with zero fees so devices can trade exact amounts of resources on-demand, as well as store data from sensors and dataloggers securely and verified on the ledger."
+                },
+                {
+                    "id":"TRX",
+                    "title":"Tron (TRX)",
+                    "src":"coins/color/TRX.png",
+                    "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/16x16/1958.png",
+                    "text":"Tron is a completely decentralized entertainment content ecosystem. Utilizing Blockchain technology, it enables content creators to Freely publish, store, and completely own their data, Decide the distribution, subscription, and push of their content and Release, circulate, and transact in digital assets. Tron platform partners already include Peiwo, Obike, Gifto, Uplive. With a total of 40 million users, Tron is poised to become the Blockchain platform with the most DAPP users in the world. Tron allows users to release their own media content in an intuitive and immersive way for audio and video exchanges, so as to create the next generation of a new Internet platform and ecology."
+                },
+                {
+                    "id":"DASH",
+                    "title":"Dash (DASH)",
+                    "src":"coins/color/DASH.png",
+                    "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/16x16/131.png",
+                    "text":"Dash is a privacy-centric digital currency with instant transactions based on the Bitcoin software, but it allows you to remain anonymous while you make transactions. With Dash the anonymization technology makes it impossible to trace them. This is important because the Blockchain is accessible to anyone with an internet connection – a significant drawback for those that don’t wish their transaction history and balances to be publicly available (which is what happens with the Bitcoin software). This is done through a mixing protocol utilizing an innovative decentralized network of servers called Masternodes, avoiding the need for a trusted third party that could compromise the integrity of the system. The transactions are almost instantly confirmed by the Masternodes network which is a great improvement on Bitcoin’s system, where confirmations take much longer because all the work is done by the miners."
+                },
+                {
+                    "id":"VEN",
+                    "title":"",
+                    "src":"coins/color/VEN.png",
+                    "modalSrc":"https://s2.coinmarketcap.com/static/img/coins/16x16/1904.png",
+                    "text":"VeChain is a decentralized Blockchain application platform that focuses on product and supply chain management through asset digitization and RFID technology. This can be used in verifying authenticity, tracking transportation and storage, and even providing details such as source materials used in a particular product. In February 2018, VeChain announced that it was rebranding to VeChain Thor. VeChain Thor will feature a new Thor Blockchain with its own VeChain Thor (VET) token to be used by businesses as a smart payment solution on the Blockchain. The Thor Blockchain will feature a twin token system. Thor Power tokens will be used for smart contracts and running Blockchain applications. Holding Thor Power tokens will generate VET tokens, much like GAS is generated by holding NEO."
+                }
+        
+]
